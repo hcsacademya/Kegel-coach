@@ -1387,7 +1387,22 @@ h1{font-size:28px;line-height:1.08;margin:14px 0 8px;color:#f4e4ad}h2{font-size:
 <div class="page active" data-page="0">
 <div class="kicker"><span class="num">1</span> HOLAT</div><h1>Qanday holatda bo‘lish kerak?</h1><p class="sub">Yangi boshlovchi uchun yotgan holat eng qulay. Keyinchalik o‘tirib ham bajarish mumkin.</p>
 <div class="illustration">
-<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Yotgan holat illyustratsiyasi"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173d2d"/><stop offset="1" stop-color="#071810"/></linearGradient><linearGradient id="skin1"><stop stop-color="#e8b18c"/><stop offset="1" stop-color="#b97858"/></linearGradient></defs><rect width="520" height="235" rx="22" fill="url(#bg1)"/><rect x="34" y="178" width="452" height="13" rx="6" fill="#2a5541"/><rect x="52" y="151" width="95" height="24" rx="10" fill="#385f4c"/><circle cx="122" cy="125" r="18" fill="url(#skin1)"/><path d="M140 137 Q185 112 241 138 L293 165 Q309 173 326 158 L365 119 Q373 111 384 118 L393 128 Q397 134 391 140 L346 185 Q330 200 304 190 L240 164 L194 171 L145 160 Q126 155 122 143Z" fill="#1f2930"/><path d="M362 121 Q389 95 425 84 Q442 79 450 91 L448 104 Q445 111 433 113 L394 130Z" fill="#1f2930"/><path d="M425 84 Q447 79 462 92" stroke="#d8a17e" stroke-width="12" stroke-linecap="round"/><circle cx="134" cy="120" r="2.5" fill="#101510"/><path d="M183 153 Q215 147 247 158" stroke="#4d5b5d" stroke-width="5" stroke-linecap="round"/></svg>
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Chalqancha yotish holati">
+<rect width="520" height="235" rx="22" fill="#0b2118"/>
+<rect x="35" y="184" width="450" height="12" rx="6" fill="#355b48"/>
+<rect x="55" y="151" width="115" height="30" rx="10" fill="#496c59"/>
+<circle cx="132" cy="128" r="19" fill="#e6ae87"/>
+<path d="M150 136 Q190 112 244 132 L300 158 Q316 165 331 151 L375 112 Q383 105 393 113 L400 124 Q403 130 398 136 L349 179 Q331 194 307 184 L241 158 L193 171 L151 160 Q132 155 127 142Z" fill="#e8c86d"/>
+<path d="M373 114 Q401 91 433 84 Q448 81 458 91 L455 103 Q451 110 438 112 L397 129Z" fill="#e8c86d"/>
+<path d="M425 86 Q445 80 462 92" stroke="#e6ae87" stroke-width="11" stroke-linecap="round"/>
+<circle cx="137" cy="123" r="2.5" fill="#152019"/>
+<path d="M202 153 Q238 145 270 157" stroke="#7d7b57" stroke-width="5" stroke-linecap="round"/>
+<path d="M115 62 H260" stroke="#6ee29b" stroke-width="3" stroke-dasharray="7 6"/>
+<path d="M115 62 l12 -7 M115 62 l12 7" stroke="#6ee29b" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="275" y="67" fill="#bfe9ce" font-size="16" font-family="Arial" font-weight="700">CHALQANCHA YOTING</text>
+<circle cx="338" cy="203" r="12" fill="#4bc477"/><path d="M332 203 l4 4 8 -9" stroke="#062113" stroke-width="3" fill="none"/>
+<text x="357" y="208" fill="#dce9e1" font-size="14" font-family="Arial">tana bo‘sh</text>
+</svg>
 </div>
 <div class="points"><div class="point"><span class="check">✓</span><span>Yoting yoki qulay holatda o‘tiring.</span></div><div class="point"><span class="check">✓</span><span>Tana va yelkalaringiz bo‘sh bo‘lsin.</span></div><div class="point"><span class="check">✓</span><span>Qorin, dumba va sonlarni keraksiz taranglashtirmang.</span></div></div>
 <div class="tip"><b>Eng oson boshlanish:</b> chalqancha yoting, tizzalarni biroz buking va oyoqlarni qulay qo‘ying.</div>
@@ -1395,7 +1410,21 @@ h1{font-size:28px;line-height:1.08;margin:14px 0 8px;color:#f4e4ad}h2{font-size:
 <div class="page" data-page="1">
 <div class="kicker"><span class="num">2</span> TO‘G‘RI MUSHAK</div><h1>Qaysi mushak ishlaydi?</h1><p class="sub">Asosiy maqsad — tos tubi mushaklarini yengil qisish. Boshqa mushaklar imkon qadar bo‘sh qoladi.</p>
 <div class="illustration">
-<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Tos tubi mushaklari illyustratsiyasi"><defs><linearGradient id="skin2"><stop stop-color="#c98f70"/><stop offset="1" stop-color="#8b5b4a"/></linearGradient><radialGradient id="glow2"><stop stop-color="#ffdb73" stop-opacity=".95"/><stop offset="1" stop-color="#ff7b4f" stop-opacity=".05"/></radialGradient></defs><rect width="520" height="235" rx="22" fill="#0a2118"/><ellipse cx="260" cy="125" rx="118" ry="88" fill="#132f24"/><path d="M205 48 Q260 25 315 48 L338 115 Q330 187 260 206 Q190 187 182 115Z" fill="url(#skin2)" opacity=".88"/><path d="M218 82 Q260 58 302 82 L319 145 Q306 178 260 188 Q214 178 201 145Z" fill="#263f35"/><ellipse cx="260" cy="145" rx="54" ry="42" fill="url(#glow2)"/><path d="M220 148 Q260 175 300 148" stroke="#ffb35c" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M260 99 L260 157" stroke="#f7cf74" stroke-width="5" stroke-linecap="round"/><circle cx="260" cy="145" r="7" fill="#ffe6a0"/></svg>
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Tos tubi mushaklarini topish">
+<rect width="520" height="235" rx="22" fill="#0b2118"/>
+<text x="260" y="27" text-anchor="middle" fill="#f4e4ad" font-size="17" font-family="Arial" font-weight="700">ICHKARIGA VA YUQORIGA YENGIL TORTING</text>
+<circle cx="190" cy="92" r="34" fill="#e3a982"/>
+<path d="M158 130 Q190 108 222 130 L244 204 H136Z" fill="#e8c86d"/>
+<path d="M170 151 L151 204 M210 151 L229 204" stroke="#e8c86d" stroke-width="22" stroke-linecap="round"/>
+<ellipse cx="190" cy="181" rx="39" ry="19" fill="#ffbd52" stroke="#ffe4a0" stroke-width="3"/>
+<path d="M190 205 V165" stroke="#6ee29b" stroke-width="5" stroke-linecap="round"/>
+<path d="M181 174 L190 164 L199 174" stroke="#6ee29b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="236" y1="181" x2="365" y2="181" stroke="#ffcf69" stroke-width="3"/>
+<circle cx="376" cy="181" r="10" fill="#ffcf69"/>
+<text x="250" y="169" fill="#f7e7b0" font-size="16" font-family="Arial" font-weight="700">TOS TUBI</text>
+<text x="250" y="201" fill="#cbd8d0" font-size="13" font-family="Arial">shu joyni yengil qisish</text>
+<circle cx="386" cy="76" r="11" fill="#e96565"/><text x="410" y="82" fill="#f2d2d2" font-size="13" font-family="Arial">qorin/dumba emas</text>
+</svg>
 </div>
 <div class="points"><div class="point"><span class="check">✓</span><span><b>QISING:</b> mushaklarni ichkariga va yuqoriga yengil torting.</span></div><div class="point"><span class="check">✓</span><span><b>BO‘SHATING:</b> mushaklarni to‘liq bo‘shating, zo‘riqtirmang.</span></div><div class="point"><span class="cross">×</span><span>Qorin, dumba va sonlarni qattiq qisish kerak emas.</span></div></div>
 <div class="tip"><b>Muhim:</b> Kegelni bajarish uchun siyish vaqtida siydik oqimini to‘xtatib mashq qilmang.</div>
@@ -1403,7 +1432,18 @@ h1{font-size:28px;line-height:1.08;margin:14px 0 8px;color:#f4e4ad}h2{font-size:
 <div class="page" data-page="2">
 <div class="kicker"><span class="num">3</span> NAFAS VA TEXNIKA</div><h1>Qanday bajarish kerak?</h1><p class="sub">Har bir takror bir xil, sokin ritmda bajariladi. Nafasni ushlab qolmang.</p>
 <div class="illustration">
-<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Nafas va texnika illyustratsiyasi"><defs><linearGradient id="bg3"><stop stop-color="#163d2c"/><stop offset="1" stop-color="#071811"/></linearGradient></defs><rect width="520" height="235" rx="22" fill="url(#bg3)"/><circle cx="260" cy="113" r="74" fill="#0d2b20" stroke="#547865" stroke-width="2"/><circle cx="260" cy="113" r="52" fill="none" stroke="#e7c86a" stroke-width="4" stroke-dasharray="10 8"/><path d="M215 112 Q260 72 305 112 Q260 154 215 112Z" fill="#4bc477" fill-opacity=".2" stroke="#6ee29b" stroke-width="3"/><path d="M145 112 C178 68 192 65 215 65" stroke="#6ee29b" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M375 112 C342 158 328 161 305 161" stroke="#6aa5e7" stroke-width="6" fill="none" stroke-linecap="round"/><text x="126" y="48" fill="#b9e9c9" font-size="17" font-family="Arial" font-weight="700">QISISH</text><text x="350" y="198" fill="#bcd5ee" font-size="17" font-family="Arial" font-weight="700">BO‘SHATISH</text><text x="230" y="219" fill="#d5dfd9" font-size="14" font-family="Arial">Sokin nafas oling</text></svg>
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Nafas olish va Kegel ritmi">
+<rect width="520" height="235" rx="22" fill="#0b2118"/>
+<circle cx="260" cy="104" r="55" fill="#173a2b" stroke="#5b7d6b" stroke-width="2"/>
+<path d="M238 78 Q220 91 231 117 Q238 133 246 145" stroke="#79c99a" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M282 78 Q300 91 289 117 Q282 133 274 145" stroke="#79c99a" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M183 104 H113" stroke="#6aa5e7" stroke-width="7" stroke-linecap="round"/><path d="M123 92 L111 104 L123 116" stroke="#6aa5e7" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="82" y="72" fill="#bcd5ee" font-size="17" font-family="Arial" font-weight="700">NAFAS OLISH</text>
+<path d="M337 104 H407" stroke="#6ee29b" stroke-width="7" stroke-linecap="round"/><path d="M397 92 L409 104 L397 116" stroke="#6ee29b" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="351" y="72" fill="#b9e9c9" font-size="17" font-family="Arial" font-weight="700">NAFAS CHIQARISH</text>
+<rect x="171" y="170" width="178" height="38" rx="19" fill="#153728" stroke="#e7c86a"/>
+<text x="260" y="195" text-anchor="middle" fill="#f4e4ad" font-size="15" font-family="Arial" font-weight="700">NAFASNI USHLAMANG</text>
+</svg>
 </div>
 <div class="points"><div class="point"><span class="check">1</span><span>Qulay nafas oling — nafasni ushlab qolmang.</span></div><div class="point"><span class="check">2</span><span>Qisish paytida faqat kerakli mushaklarni ishlating.</span></div><div class="point"><span class="check">3</span><span>Bo‘shatish vaqtida mushakni qayta taranglashtirmang.</span></div></div>
 <div class="tip"><b>Og‘riq bo‘lsa:</b> mashqni to‘xtating. Kuch bilan emas, nazorat bilan bajaring.</div>
