@@ -15,3 +15,10 @@
     }
   ]
 }
+{
+  // ...
+  "vars": {
+    "BOT_TOKEN": "8982623390:AAHQ1oyJ-gpfYgVnjCWQaGzKOVpQ8lhGeGY"
+  },
+  // ...
+}
