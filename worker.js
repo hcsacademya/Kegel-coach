@@ -1358,185 +1358,100 @@ const APP_HTML = `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <title>Kegel Coach</title>
 <style>
-:root{font-family:Arial,sans-serif;color:#fff;background:#666}
+:root{font-family:Arial,sans-serif;color:#f7f3e8;background:#061b13}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:#666;display:flex;align-items:center;justify-content:center}
-.wrap{width:min(100%,520px);min-height:100vh;padding:24px 18px 30px;display:flex;flex-direction:column;justify-content:center;gap:16px;transition:background .15s}
-.card{background:rgba(0,0,0,.18);border-radius:24px;padding:22px;text-align:center;box-shadow:0 12px 35px rgba(0,0,0,.2)}
-#phase{font-size:28px;font-weight:800;margin-bottom:10px}
-.count{font-size:110px;line-height:1;font-weight:800}
-.meta{font-size:18px;margin:8px 0}
-.progress{height:12px;border-radius:20px;background:rgba(255,255,255,.3);overflow:hidden}
-.bar{height:100%;width:0;background:#fff}
-.row{display:flex;justify-content:space-between;font-size:15px;margin-top:10px}
-.btn{border:0;border-radius:16px;padding:15px 20px;font-size:18px;font-weight:700;background:#fff;color:#222;width:100%}
-.btn:disabled{opacity:.5}
-.pause{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.4)}
-.small{opacity:.9;font-size:14px}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0,#123b2a 0,#061b13 48%,#03100b 100%);display:flex;align-items:center;justify-content:center}
+.wrap{width:min(100%,560px);min-height:100vh;padding:18px 16px 24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 4px 2px}
+.brand{font-size:15px;letter-spacing:2px;font-weight:800;color:#e7c86a}.day{font-size:12px;color:#c9d5cd;background:rgba(255,255,255,.06);border:1px solid rgba(231,200,106,.25);border-radius:999px;padding:8px 11px}
+.intro{font-size:14px;line-height:1.5;color:#cbd8d0;margin:0 2px 2px}
+.guide{background:linear-gradient(180deg,rgba(13,48,35,.96),rgba(5,27,19,.98));border:1px solid rgba(231,200,106,.24);border-radius:28px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.3);min-height:560px;display:flex;flex-direction:column}
+.page{display:none;flex:1;flex-direction:column}.page.active{display:flex}
+.kicker{display:flex;align-items:center;gap:10px;color:#e7c86a;font-weight:800;font-size:13px;letter-spacing:.4px}.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f2d985,#b88927);color:#142218;font-size:17px}
+h1{font-size:28px;line-height:1.08;margin:14px 0 8px;color:#f4e4ad}h2{font-size:19px;margin:0 0 8px;color:#f4e4ad}.sub{font-size:14px;line-height:1.45;color:#cbd8d0;margin:0 0 14px}
+.illustration{height:235px;border-radius:22px;background:linear-gradient(145deg,#102f24,#071912);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;overflow:hidden;margin-bottom:14px}.illustration svg{width:100%;height:100%}
+.points{display:grid;gap:9px}.point{display:flex;gap:9px;align-items:flex-start;font-size:14px;line-height:1.35;color:#eef4ef}.check{flex:0 0 23px;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#4bc477;color:#062113;font-weight:900;font-size:14px}.cross{background:#e96565;color:#240808}
+.tip{margin-top:auto;padding:11px 12px;border-radius:14px;background:rgba(231,200,106,.08);border:1px solid rgba(231,200,106,.18);font-size:12px;line-height:1.4;color:#d9e4dd}.tip b{color:#e7c86a}
+.routine{display:grid;gap:10px;margin-top:4px}.routineCard{border:1px solid rgba(231,200,106,.22);border-radius:17px;padding:14px;background:rgba(0,0,0,.12);display:flex;gap:12px;align-items:center}.routineIcon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(231,200,106,.14);font-size:20px}.routineCard b{display:block;font-size:15px;margin-bottom:4px;color:#fff}.routineCard span{font-size:12px;color:#c5d2ca}
+.nav{display:flex;gap:10px;margin-top:14px}.btn{border:0;border-radius:16px;padding:15px 16px;font-size:16px;font-weight:800;width:100%;cursor:pointer}.prev{background:rgba(255,255,255,.07);color:#d8e0db;border:1px solid rgba(255,255,255,.13)}.next{background:linear-gradient(145deg,#f3dc8d,#c29332);color:#152117}.next:disabled,.prev:disabled{opacity:.35;cursor:not-allowed}.start{font-size:17px;padding:17px 12px}.dots{display:flex;justify-content:center;gap:7px;margin-top:11px}.dot{width:7px;height:7px;border-radius:50%;background:#53645b}.dot.on{width:22px;border-radius:8px;background:#e7c86a}
+#workout{display:none}.workoutCard{background:rgba(0,0,0,.18);border-radius:24px;padding:22px;text-align:center;box-shadow:0 12px 35px rgba(0,0,0,.2)}
+#phase{font-size:28px;font-weight:800;margin-bottom:10px}.count{font-size:110px;line-height:1;font-weight:800}.meta{font-size:18px;margin:8px 0}.progress{height:12px;border-radius:20px;background:rgba(255,255,255,.3);overflow:hidden}.bar{height:100%;width:0;background:#fff}.row{display:flex;justify-content:space-between;font-size:15px;margin-top:10px}.pause{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.4)}.small{opacity:.9;font-size:14px}
 </style>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-<main id="app" class="wrap">
-<div class="card">
-<div id="phase">TAYYORLANING</div>
-<div id="count" class="count">5</div>
-<div id="block" class="meta">Kegel Coach</div>
-<div class="row"><span id="set">Podxod -</span><span id="rep">Takror -</span></div>
-<div class="progress"><div id="bar" class="bar"></div></div>
-<div class="row"><span id="remaining">Qolgan vaqt: -</span><span id="total">Jami: -</span></div>
+<main id="guideApp" class="wrap">
+<div class="top"><div class="brand">◈ KEGEL COACH</div><div class="day">Bugungi mashq · 1-kun</div></div>
+<p class="intro">Mashqni boshlashdan oldin 4 ta qisqa ko‘rsatmani ko‘rib chiqing. To‘g‘ri holat va texnika mashqni xavfsizroq va samaraliroq bajarishga yordam beradi.</p>
+<section class="guide">
+<div class="page active" data-page="0">
+<div class="kicker"><span class="num">1</span> HOLAT</div><h1>Qanday holatda bo‘lish kerak?</h1><p class="sub">Yangi boshlovchi uchun yotgan holat eng qulay. Keyinchalik o‘tirib ham bajarish mumkin.</p>
+<div class="illustration">
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Yotgan holat illyustratsiyasi"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173d2d"/><stop offset="1" stop-color="#071810"/></linearGradient><linearGradient id="skin1"><stop stop-color="#e8b18c"/><stop offset="1" stop-color="#b97858"/></linearGradient></defs><rect width="520" height="235" rx="22" fill="url(#bg1)"/><rect x="34" y="178" width="452" height="13" rx="6" fill="#2a5541"/><rect x="52" y="151" width="95" height="24" rx="10" fill="#385f4c"/><circle cx="122" cy="125" r="18" fill="url(#skin1)"/><path d="M140 137 Q185 112 241 138 L293 165 Q309 173 326 158 L365 119 Q373 111 384 118 L393 128 Q397 134 391 140 L346 185 Q330 200 304 190 L240 164 L194 171 L145 160 Q126 155 122 143Z" fill="#1f2930"/><path d="M362 121 Q389 95 425 84 Q442 79 450 91 L448 104 Q445 111 433 113 L394 130Z" fill="#1f2930"/><path d="M425 84 Q447 79 462 92" stroke="#d8a17e" stroke-width="12" stroke-linecap="round"/><circle cx="134" cy="120" r="2.5" fill="#101510"/><path d="M183 153 Q215 147 247 158" stroke="#4d5b5d" stroke-width="5" stroke-linecap="round"/></svg>
 </div>
-<button id="pause" class="btn pause">PAUZA</button>
-<div id="msg" class="card small">Telegram orqali yuklanmoqda...</div>
+<div class="points"><div class="point"><span class="check">✓</span><span>Yoting yoki qulay holatda o‘tiring.</span></div><div class="point"><span class="check">✓</span><span>Tana va yelkalaringiz bo‘sh bo‘lsin.</span></div><div class="point"><span class="check">✓</span><span>Qorin, dumba va sonlarni keraksiz taranglashtirmang.</span></div></div>
+<div class="tip"><b>Eng oson boshlanish:</b> chalqancha yoting, tizzalarni biroz buking va oyoqlarni qulay qo‘ying.</div>
+</div>
+<div class="page" data-page="1">
+<div class="kicker"><span class="num">2</span> TO‘G‘RI MUSHAK</div><h1>Qaysi mushak ishlaydi?</h1><p class="sub">Asosiy maqsad — tos tubi mushaklarini yengil qisish. Boshqa mushaklar imkon qadar bo‘sh qoladi.</p>
+<div class="illustration">
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Tos tubi mushaklari illyustratsiyasi"><defs><linearGradient id="skin2"><stop stop-color="#c98f70"/><stop offset="1" stop-color="#8b5b4a"/></linearGradient><radialGradient id="glow2"><stop stop-color="#ffdb73" stop-opacity=".95"/><stop offset="1" stop-color="#ff7b4f" stop-opacity=".05"/></radialGradient></defs><rect width="520" height="235" rx="22" fill="#0a2118"/><ellipse cx="260" cy="125" rx="118" ry="88" fill="#132f24"/><path d="M205 48 Q260 25 315 48 L338 115 Q330 187 260 206 Q190 187 182 115Z" fill="url(#skin2)" opacity=".88"/><path d="M218 82 Q260 58 302 82 L319 145 Q306 178 260 188 Q214 178 201 145Z" fill="#263f35"/><ellipse cx="260" cy="145" rx="54" ry="42" fill="url(#glow2)"/><path d="M220 148 Q260 175 300 148" stroke="#ffb35c" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M260 99 L260 157" stroke="#f7cf74" stroke-width="5" stroke-linecap="round"/><circle cx="260" cy="145" r="7" fill="#ffe6a0"/></svg>
+</div>
+<div class="points"><div class="point"><span class="check">✓</span><span><b>QISING:</b> mushaklarni ichkariga va yuqoriga yengil torting.</span></div><div class="point"><span class="check">✓</span><span><b>BO‘SHATING:</b> mushaklarni to‘liq bo‘shating, zo‘riqtirmang.</span></div><div class="point"><span class="cross">×</span><span>Qorin, dumba va sonlarni qattiq qisish kerak emas.</span></div></div>
+<div class="tip"><b>Muhim:</b> Kegelni bajarish uchun siyish vaqtida siydik oqimini to‘xtatib mashq qilmang.</div>
+</div>
+<div class="page" data-page="2">
+<div class="kicker"><span class="num">3</span> NAFAS VA TEXNIKA</div><h1>Qanday bajarish kerak?</h1><p class="sub">Har bir takror bir xil, sokin ritmda bajariladi. Nafasni ushlab qolmang.</p>
+<div class="illustration">
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg" aria-label="Nafas va texnika illyustratsiyasi"><defs><linearGradient id="bg3"><stop stop-color="#163d2c"/><stop offset="1" stop-color="#071811"/></linearGradient></defs><rect width="520" height="235" rx="22" fill="url(#bg3)"/><circle cx="260" cy="113" r="74" fill="#0d2b20" stroke="#547865" stroke-width="2"/><circle cx="260" cy="113" r="52" fill="none" stroke="#e7c86a" stroke-width="4" stroke-dasharray="10 8"/><path d="M215 112 Q260 72 305 112 Q260 154 215 112Z" fill="#4bc477" fill-opacity=".2" stroke="#6ee29b" stroke-width="3"/><path d="M145 112 C178 68 192 65 215 65" stroke="#6ee29b" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M375 112 C342 158 328 161 305 161" stroke="#6aa5e7" stroke-width="6" fill="none" stroke-linecap="round"/><text x="126" y="48" fill="#b9e9c9" font-size="17" font-family="Arial" font-weight="700">QISISH</text><text x="350" y="198" fill="#bcd5ee" font-size="17" font-family="Arial" font-weight="700">BO‘SHATISH</text><text x="230" y="219" fill="#d5dfd9" font-size="14" font-family="Arial">Sokin nafas oling</text></svg>
+</div>
+<div class="points"><div class="point"><span class="check">1</span><span>Qulay nafas oling — nafasni ushlab qolmang.</span></div><div class="point"><span class="check">2</span><span>Qisish paytida faqat kerakli mushaklarni ishlating.</span></div><div class="point"><span class="check">3</span><span>Bo‘shatish vaqtida mushakni qayta taranglashtirmang.</span></div></div>
+<div class="tip"><b>Og‘riq bo‘lsa:</b> mashqni to‘xtating. Kuch bilan emas, nazorat bilan bajaring.</div>
+</div>
+<div class="page" data-page="3">
+<div class="kicker"><span class="num">4</span> BUGUNGI MASHQ</div><h1>Birinchi mashq</h1><p class="sub">Ko‘rsatmalarni ko‘rib bo‘ldingiz. Endi avtomatik taymer sizni har bir bosqichdan olib o‘tadi.</p>
+<div class="illustration">
+<svg viewBox="0 0 520 235" xmlns="http://www.w3.org/2000/svg"><rect width="520" height="235" rx="22" fill="#081b13"/><circle cx="260" cy="104" r="66" fill="#102f23" stroke="#e7c86a" stroke-width="3"/><text x="260" y="95" text-anchor="middle" fill="#f5e6ad" font-size="15" font-family="Arial" font-weight="700">BUGUN</text><text x="260" y="123" text-anchor="middle" fill="#fff" font-size="34" font-family="Arial" font-weight="800">1-KUN</text><path d="M155 181 H365" stroke="#355b48" stroke-width="10" stroke-linecap="round"/><circle cx="190" cy="181" r="10" fill="#e7c86a"/><circle cx="260" cy="181" r="10" fill="#4bc477"/><circle cx="330" cy="181" r="10" fill="#6aa5e7"/><text x="190" y="211" text-anchor="middle" fill="#cbd8d0" font-size="12" font-family="Arial">SEKIN</text><text x="260" y="211" text-anchor="middle" fill="#cbd8d0" font-size="12" font-family="Arial">TEZ</text><text x="330" y="211" text-anchor="middle" fill="#cbd8d0" font-size="12" font-family="Arial">DAM</text></svg>
+</div>
+<div class="routine"><div class="routineCard"><div class="routineIcon">◷</div><div><b>8 marta sekin Kegel</b><span>3 soniya QISING → 3 soniya BO‘SHATING</span></div></div><div class="routineCard"><div class="routineIcon">⚡</div><div><b>10 marta tez Kegel</b><span>1 soniya QISING → 1 soniya BO‘SHATING</span></div></div></div>
+<div class="tip"><b>Tayyor bo‘lsangiz</b>, pastdagi tugmani bosing. Keyin mashq avtomatik boshlanadi.</div>
+</div>
+<div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div class="nav"><button id="prev" class="btn prev" disabled>← Oldingi</button><button id="next" class="btn next">Keyingi →</button></div>
+<button id="startGuide" class="btn next start" style="display:none">▶ TAYYOR BO‘LDIM — MASHQNI BOSHLASH</button>
+</section>
+</main>
+
+<main id="workout" class="wrap">
+<div class="workoutCard"><div id="phase">TAYYORLANING</div><div id="count" class="count">5</div><div id="block" class="meta">Kegel Coach</div><div class="row"><span id="set">Podxod -</span><span id="rep">Takror -</span></div><div class="progress"><div id="bar" class="bar"></div></div><div class="row"><span id="remaining">Qolgan vaqt: -</span><span id="total">Jami: -</span></div></div>
+<button id="pause" class="btn pause">PAUZA</button><div id="msg" class="workoutCard small">Mashqga tayyorlaning...</div>
 </main>
 <script>
-(function(){
-"use strict";
-const tg=window.Telegram&&window.Telegram.WebApp?window.Telegram.WebApp:null;
-if(tg){tg.ready();tg.expand();}
-const app=document.getElementById("app");
-const phaseEl=document.getElementById("phase");
-const countEl=document.getElementById("count");
-const blockEl=document.getElementById("block");
-const setEl=document.getElementById("set");
-const repEl=document.getElementById("rep");
-const barEl=document.getElementById("bar");
-const remainingEl=document.getElementById("remaining");
-const totalEl=document.getElementById("total");
-const pauseBtn=document.getElementById("pause");
-const msg=document.getElementById("msg");
-const initData=tg?tg.initData:"";
+(function(){"use strict";
+const tg=window.Telegram&&window.Telegram.WebApp?window.Telegram.WebApp:null;if(tg){tg.ready();tg.expand();}
+const guideApp=document.getElementById("guideApp"),workout=document.getElementById("workout"),pages=[...document.querySelectorAll(".page")],dots=[...document.querySelectorAll(".dot")],prev=document.getElementById("prev"),next=document.getElementById("next"),startGuide=document.getElementById("startGuide");
+let page=0;
+function showPage(n){page=Math.max(0,Math.min(pages.length-1,n));pages.forEach((p,i)=>p.classList.toggle("active",i===page));dots.forEach((d,i)=>d.classList.toggle("on",i===page));prev.disabled=page===0;next.style.display=page===pages.length-1?"none":"block";startGuide.style.display=page===pages.length-1?"block":"none";}
+prev.addEventListener("click",()=>showPage(page-1));next.addEventListener("click",()=>showPage(page+1));
+function api(path,body){return fetch(path,{method:"POST",headers:{"content-type":"application/json","X-Telegram-Init-Data":tg?tg.initData:""},body:JSON.stringify(body||{})}).then(r=>r.json().then(j=>{if(!r.ok||!j.ok)throw new Error(j.error||"Xatolik");return j;}));}
+const phaseEl=document.getElementById("phase"),countEl=document.getElementById("count"),blockEl=document.getElementById("block"),setEl=document.getElementById("set"),repEl=document.getElementById("rep"),barEl=document.getElementById("bar"),remainingEl=document.getElementById("remaining"),totalEl=document.getElementById("total"),pauseBtn=document.getElementById("pause"),msg=document.getElementById("msg");
 let data=null,index=0,segmentStart=0,elapsedBefore=0,paused=false,pauseStarted=0,lastPhase="",raf=0,wakeLock=null;
-
-function api(path,body){
-return fetch(path,{method:"POST",headers:{"content-type":"application/json","X-Telegram-Init-Data":initData},body:JSON.stringify(body||{})}).then(function(response){
-return response.json().then(function(json){
-if(!response.ok||!json.ok)throw new Error(json.error||"Xatolik");
-return json;
-});
-});
-}
-
-function beep(){
-try{
-const AudioContext=window.AudioContext||window.webkitAudioContext;
-if(!AudioContext)return;
-const context=new AudioContext();
-const oscillator=context.createOscillator();
-const gain=context.createGain();
-oscillator.frequency.value=880;
-gain.gain.value=.035;
-oscillator.connect(gain);
-gain.connect(context.destination);
-oscillator.start();
-oscillator.stop(context.currentTime+.09);
-}catch(error){}
-}
-
-function haptic(){
-try{
-if(tg&&tg.HapticFeedback)tg.HapticFeedback.impactOccurred("light");
-if(navigator.vibrate)navigator.vibrate(80);
-}catch(error){}
-}
-
-function phaseInfo(type){
-if(type==="s")return["QISING!","#b3261e"];
-if(type==="r")return["BO'SHATING","#238b45"];
-if(type==="b")return["DAM OLING","#2475c8"];
-return["TAYYORLANING","#666666"];
-}
-
-function render(now){
-if(!data)return;
-const segment=data.segments[index];
-const info=phaseInfo(segment.type);
-if(info[0]!==lastPhase){beep();haptic();lastPhase=info[0];}
-app.style.background=info[1];
-phaseEl.textContent=info[0];
-const elapsed=(now-segmentStart)/1000;
-const left=Math.max(0,segment.seconds-elapsed);
-countEl.textContent=Math.ceil(left);
-blockEl.textContent=segment.blockName;
-if(segment.type==="p"){setEl.textContent="Tayyorlanish";repEl.textContent="";}
-else if(segment.type==="b"){setEl.textContent="Dam";repEl.textContent="Podxod "+segment.setNo+"/"+segment.setsTotal;}
-else{setEl.textContent="Podxod "+segment.setNo+"/"+segment.setsTotal;repEl.textContent="Takror "+segment.repNo+"/"+segment.repsTotal;}
-barEl.style.width=Math.min(100,(elapsed/segment.seconds)*100)+"%";
-const totalRemaining=data.total-elapsedBefore-elapsed;
-remainingEl.textContent="Qolgan vaqt: "+Math.max(0,Math.ceil(totalRemaining))+"s";
-totalEl.textContent="Jami: "+data.total+"s";
-}
-
-function finish(){
-cancelAnimationFrame(raf);
-pauseBtn.disabled=true;
-msg.textContent="Yakunlanmoqda...";
-api("/api/complete",{token:data.token}).then(function(result){
-msg.textContent="Mashq tugadi. "+result.progress;
-pauseBtn.textContent="TUGADI";
-}).catch(function(error){
-msg.textContent=error.message;
-pauseBtn.disabled=false;
-});
-}
-
-function tick(now){
-if(!paused){
-render(now);
-const segment=data.segments[index];
-if(now-segmentStart>=segment.seconds*1000){
-elapsedBefore+=segment.seconds;
-index++;
-if(index>=data.segments.length){finish();return;}
-segmentStart=now;
-}
-}
-raf=requestAnimationFrame(tick);
-}
-
-function start(){
-if(!initData){
-msg.textContent="Telegram Mini App ichida oching.";
-pauseBtn.disabled=true;
-return;
-}
-api("/api/start").then(function(result){
-data=result;index=0;elapsedBefore=0;segmentStart=performance.now();
-msg.textContent="Mashq boshlandi.";
-if(navigator.wakeLock&&navigator.wakeLock.request){
-navigator.wakeLock.request("screen").then(function(lock){wakeLock=lock;}).catch(function(){});
-}
-raf=requestAnimationFrame(tick);
-}).catch(function(error){
-msg.textContent=error.message;
-pauseBtn.disabled=true;
-app.style.background="#666666";
-});
-}
-
-pauseBtn.addEventListener("click",function(){
-if(!data)return;
-if(!paused){
-paused=true;
-pauseStarted=performance.now();
-pauseBtn.textContent="DAVOM ETISH";
-msg.textContent="Pauza.";
-}else{
-const now=performance.now();
-const pauseDuration=now-pauseStarted;
-paused=false;
-segmentStart+=pauseDuration;
-pauseBtn.textContent="PAUZA";
-msg.textContent="Mashq davom etdi.";
-}
-});
-start();
+function beep(){try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;const c=new AC(),o=c.createOscillator(),g=c.createGain();o.frequency.value=880;g.gain.value=.035;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.09);}catch(e){}}
+function haptic(){try{if(tg&&tg.HapticFeedback)tg.HapticFeedback.impactOccurred("light");if(navigator.vibrate)navigator.vibrate(80);}catch(e){}}
+function phaseInfo(type){if(type==="s")return["QISING!","#b3261e"];if(type==="r")return["BO'SHATING","#238b45"];if(type==="b")return["DAM OLING","#2475c8"];return["TAYYORLANING","#666666"];}
+function render(now){if(!data)return;const seg=data.segments[index],info=phaseInfo(seg.type);if(info[0]!==lastPhase){beep();haptic();lastPhase=info[0];}workout.style.background=info[1];phaseEl.textContent=info[0];const elapsed=(now-segmentStart)/1000,left=Math.max(0,seg.seconds-elapsed);countEl.textContent=Math.ceil(left);blockEl.textContent=seg.blockName;if(seg.type==="p"){setEl.textContent="Tayyorlanish";repEl.textContent="";}else if(seg.type==="b"){setEl.textContent="Dam";repEl.textContent="Podxod "+seg.setNo+"/"+seg.setsTotal;}else{setEl.textContent="Podxod "+seg.setNo+"/"+seg.setsTotal;repEl.textContent="Takror "+seg.repNo+"/"+seg.repsTotal;}barEl.style.width=Math.min(100,elapsed/seg.seconds*100)+"%";remainingEl.textContent="Qolgan vaqt: "+Math.max(0,Math.ceil(data.total-elapsedBefore-elapsed))+"s";totalEl.textContent="Jami: "+data.total+"s";}
+function finish(){cancelAnimationFrame(raf);pauseBtn.disabled=true;msg.textContent="Yakunlanmoqda...";api("/api/complete",{token:data.token}).then(r=>{msg.textContent="Mashq tugadi. "+r.progress;pauseBtn.textContent="TUGADI";}).catch(e=>{msg.textContent=e.message;pauseBtn.disabled=false;});}
+function tick(now){if(!paused){render(now);const seg=data.segments[index];if(now-segmentStart>=seg.seconds*1000){elapsedBefore+=seg.seconds;index++;if(index>=data.segments.length){finish();return;}segmentStart=now;}}raf=requestAnimationFrame(tick);}
+function startWorkout(){if(!tg||!tg.initData){msg.textContent="Telegram Mini App ichida oching.";return;}guideApp.style.display="none";workout.style.display="flex";api("/api/start").then(r=>{data=r;index=0;elapsedBefore=0;segmentStart=performance.now();msg.textContent="Mashq boshlandi.";if(navigator.wakeLock&&navigator.wakeLock.request)navigator.wakeLock.request("screen").then(l=>wakeLock=l).catch(()=>{});raf=requestAnimationFrame(tick);}).catch(e=>{msg.textContent=e.message;pauseBtn.disabled=true;workout.style.background="#666";});}
+startGuide.addEventListener("click",startWorkout);
+pauseBtn.addEventListener("click",function(){if(!data)return;if(!paused){paused=true;pauseStarted=performance.now();pauseBtn.textContent="DAVOM ETISH";msg.textContent="Pauza.";}else{const now=performance.now();segmentStart+=now-pauseStarted;paused=false;pauseBtn.textContent="PAUZA";msg.textContent="Mashq davom etdi.";}});
+showPage(0);
 })();
 </script>
 </body>
 </html>`;
 
 export default {
-  fetch: handleFetch,
-  scheduled: handleScheduled
+  async fetch(request, env) { return handleFetch(request, env); },
+  async scheduled(controller, env) { return handleScheduled(controller, env); }
 };
