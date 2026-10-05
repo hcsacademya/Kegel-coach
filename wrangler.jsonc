@@ -1,0 +1,17 @@
+{
+  "name": "kegel-coach",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": true,
+  "triggers": {
+    "crons": [
+      "* * * * *"
+    ]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "KEGEL_KV",
+      "id": "SHU_YERGA_KV_ID_NI_YOZING"
+    }
+  ]
+}
